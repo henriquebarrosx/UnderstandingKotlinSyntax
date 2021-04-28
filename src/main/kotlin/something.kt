@@ -1,3 +1,4 @@
+import objects.Fruit
 import objects.Square
 
 fun main() {
