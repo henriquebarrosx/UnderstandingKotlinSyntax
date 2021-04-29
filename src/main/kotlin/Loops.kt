@@ -1,6 +1,7 @@
 fun main() {
   // Creating a list
-  val fruits = listOf("Apple", "Strawberry", "Orange", "Grape")
+  val fruits = arrayListOf<String>("Apple", "Strawberry", "Orange", "Grape")
+  fruits.add("Passion fruit")
 
   val iterateByArray = fruits.map { "I love $it" }
 

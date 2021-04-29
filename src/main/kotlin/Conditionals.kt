@@ -6,6 +6,9 @@ fun main() {
 
     println("Color: ${getColorStr(Color.BLUE)}");
     println("Color: ${getColorTemperatureStr(Color.BLUE)}");
+
+    println("Is a letter ${isLetter('B')}")
+    println("Is a digit ${isNotDigit('B')}")
 }
 
 // Expression body with inline conditional
@@ -35,3 +38,8 @@ fun getColorTemperatureStr(color: Color): String {
         Color.GREEN -> "Cool"
     }
 }
+
+// Using simple quotation marks make all difference
+fun isLetter(character: Char) = character in 'a'..'z' || character in 'A'..'Z'
+
+fun isNotDigit(character: Char) = character !in '1'..'9'
