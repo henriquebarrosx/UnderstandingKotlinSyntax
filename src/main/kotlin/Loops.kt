@@ -16,4 +16,16 @@ fun main() {
   println("Filter fruit: $filterApple")
   println("Find fruit: $findApple")
   println("Reduce fruits: $reduceFruits")
+
+  // bad
+  for(num in 0..fruits.size -1) {
+    // fruits.size = length
+    println("Fruit ${fruits[num]} has index $num")
+  }
+
+  // good
+  for(num in fruits.indices) {
+    // fruits.indices = 0..3
+    println("Fruit ${fruits[num]} has index $num")
+  }
 }
