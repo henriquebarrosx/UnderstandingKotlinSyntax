@@ -1,18 +1,18 @@
 import objects.Color
 
 fun main() {
-    println("Short Function: ${sum2(3, 5)}");
-    println("Block Function: ${ sum1(3, 5) }");
+    println("Short Function: ${sum1(3, 5)}");
+    println("Block Function: ${ sum2(3, 5) }");
 
     println("Color: ${getColorStr(Color.BLUE)}");
     println("Color: ${getColorTemperatureStr(Color.BLUE)}");
 }
 
 // Expression body with inline conditional
-fun sum2(x: Int, y: Int): Int = if (x > 3) x + y else x * y;
+fun sum1(x: Int, y: Int): Int = if (x > 3) x + y else x * y;
 
 // Block body
-fun sum1(x: Int, y: Int): Int {
+fun sum2(x: Int, y: Int): Int {
     return if (x > 3) x + y else x * y;
 }
 
