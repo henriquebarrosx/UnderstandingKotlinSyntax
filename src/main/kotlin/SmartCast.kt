@@ -18,9 +18,21 @@ fun validation(expression: Expression): Int {
   throw IllegalArgumentException("Unknown expression")
 }
 
+fun validationUsingBranchBlock(expression: Expression): Int {
+  return when(expression) {
+    // Branch block
+    is Sum -> {
+      val validate = fun (expression: Expression) = validationUsingBranchBlock(expression)
+      validate(expression.leftValue) + validate(expression.rightValue)
+    }
+    is Number -> expression.value
+    else -> throw IllegalArgumentException("Unknown expression")
+  }
+}
+
 fun main() {
   // ((2 + 2) + 5)
-  val value: Int = validation(
+  val value1: Int = validation(
     Sum(
       Sum(
         Number(2),
@@ -30,5 +42,16 @@ fun main() {
     )
   )
 
-  println("Value: $value")
+  val value2: Int = validationUsingBranchBlock(
+    Sum(
+      Sum(
+        Number(2),
+        Number(2)
+      ),
+      Number(5)
+    )
+  )
+
+  println("Value: $value1")
+  println("Value: $value2")
 }
